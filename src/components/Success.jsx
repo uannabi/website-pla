@@ -18,11 +18,22 @@ export default class Success extends Component {
     }
     render() {
         return (
-            <div style={this.style.outer}>
-                <Header/>
+            <div className="wrapper">
                 <div className="container">
                     <h1 style={this.style.successMsg}>Varification Successfull</h1>
                 </div>
+                <ul className="bg-bubbles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         )
     }
