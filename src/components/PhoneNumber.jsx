@@ -11,15 +11,6 @@ export default class PhoneNumber extends Component {
         outer:{
             background:"#6495ED",
             height:"100vh"
-        },
-        rowDigit:{
-          marginLeft:"50px",  
-          marginTop:"50px"
-        },
-        digits:{
-            width:"7%",
-            marginRight:"2%",
-            height:"50px"
         }
     }
     state = {
@@ -46,7 +37,6 @@ export default class PhoneNumber extends Component {
             }
         };
         const body = JSON.stringify({ "phone_number":phone_number, "vendor":"1" });
-        // console.log(phone_number)
         axios.post(PHONE_NUMBER,body,config)
             .then(res=>{
                 console.log(res.data.message)
@@ -60,24 +50,20 @@ export default class PhoneNumber extends Component {
         return (
             <div className="wrapper">
                 <div className="container">
-                    <div style={this.style.rowDigit} className="row">
-                        <div className="col-lg-3">
-                            <Select defaultValue="BD" size="large" style={{width:"120px",height:"30px",marginTop:"5px",float:"right"}}>
-                                <Option value="BD">+880</Option>
-                            </Select>
-                        </div>
-                        <div className="col col-lg-9">
-                        <Input maxLength="1" style={this.style.digits} name="a" value={this.state.a} type="number" onChange={this.onChange} autoFocus onKeyPress={()=>this.refs.b.focus()}/>
-                        <Input maxLength="1" ref="b" style={this.style.digits} name="b" value={this.state.b} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.c.focus()}/>
-                        <Input maxLength="1" ref="c" style={this.style.digits} name="c" value={this.state.c} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.d.focus()}/>
-                        <Input maxLength="1" ref="d" style={this.style.digits} name="d" value={this.state.d} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.e.focus()}/>
-                        <Input maxLength="1" ref="e" style={this.style.digits} name="e" value={this.state.e} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.f.focus()}/>
-                        <Input maxLength="1" ref="f" style={this.style.digits} name="f" value={this.state.f} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.g.focus()}/>
-                        <Input maxLength="1" ref="g" style={this.style.digits} name="g" value={this.state.g} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.h.focus()}/>
-                        <Input maxLength="1" ref="h" style={this.style.digits} name="h" value={this.state.h} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.i.focus()}/>
-                        <Input maxLength="1" ref="i" style={this.style.digits} name="i" value={this.state.i} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.j.focus()}/>
-                        <Input maxLength="1" ref="j" style={this.style.digits} name="j" value={this.state.j} type="number" onChange={this.onChange}/>
-                        </div>
+                    <div style={this.style.rowDigit} className="row-fluid">
+                        <Select defaultValue="BD" size="large" className="country-dropdown">
+                            <Option value="BD">+880</Option>
+                        </Select>
+                        <input className="col digits" name="a" value={this.state.a} type="number" onChange={this.onChange} autoFocus onKeyPress={()=>this.refs.b.focus()} maxlength="1"/>
+                        <input maxLength="1" ref="b" className="col digits" name="b" value={this.state.b} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.c.focus()}/>
+                        <input maxLength="1" ref="c" className="col digits" name="c" value={this.state.c} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.d.focus()}/>
+                        <input maxLength="1" ref="d" className="col digits" name="d" value={this.state.d} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.e.focus()}/>
+                        <input maxLength="1" ref="e" className="col digits" name="e" value={this.state.e} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.f.focus()}/>
+                        <input maxLength="1" ref="f" className="col digits" name="f" value={this.state.f} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.g.focus()}/>
+                        <input maxLength="1" ref="g" className="col digits" name="g" value={this.state.g} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.h.focus()}/>
+                        <input maxLength="1" ref="h" className="col digits" name="h" value={this.state.h} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.i.focus()}/>
+                        <input maxLength="1" ref="i" className="col digits" name="i" value={this.state.i} type="number" onChange={this.onChange} onKeyPress={()=>this.refs.j.focus()}/>
+                        <input maxLength="1" ref="j" className="col digits" name="j" value={this.state.j} type="number" onChange={this.onChange}/>
                     </div>
                     <div className="text-center" style={{margin:"10px"}}>
                         <Button variant="success" onClick={this.sendOTP}>Send OTP</Button>
