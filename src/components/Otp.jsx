@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import {Button} from "react-bootstrap";
 import {OTP} from './../endpoint';
 import axios from 'axios';
@@ -55,16 +54,15 @@ export default class Otp extends Component {
         return (
             <div className="wrapper">
                 <div className="container">
-                    <div className="row" style={{display: "flex",alignItems: "center",width: "100%",alignContent:"center",marginLeft:"33%"}}>
-                        <Input style={this.style.digits} name="a" value={this.state.a} type="text" maxLength="1" onChange={this.onChange} autoFocus onKeyPress={()=>this.refs.b.focus()}/>
-                        <Input ref="b" style={this.style.digits} name="b" value={this.state.b} type="text" maxLength="1" onChange={this.onChange} onKeyPress={()=>this.refs.c.focus()}/>
-                        <Input ref="c" style={this.style.digits} name="c" value={this.state.c} type="text" maxLength="1" onChange={this.onChange} onKeyPress={()=>this.refs.d.focus()}/>
-                        <Input ref="d" style={this.style.digits} name="d" value={this.state.d} type="text" maxLength="1" onChange={this.onChange}/>
+                    <div className="row" style={{display: "flex",alignItems: "center",width: "100%",alignContent:"center",marginLeft:"33%",marginTop:"100px"}}>
+                        <input style={this.style.digits} name="a" value={this.state.a} type="number" maxLength="1" onChange={this.onChange} autoFocus onKeyPress={()=>this.refs.b.focus()}/>
+                        <input ref="b" style={this.style.digits} name="b" value={this.state.b} type="number" maxLength="1" onChange={this.onChange} onKeyPress={()=>this.refs.c.focus()}/>
+                        <input ref="c" style={this.style.digits} name="c" value={this.state.c} type="number" maxLength="1" onChange={this.onChange} onKeyPress={()=>this.refs.d.focus()}/>
+                        <input ref="d" style={this.style.digits} name="d" value={this.state.d} type="number" maxLength="1" onChange={this.onChange}/>
                     </div>
                     <div className="text-center" style={{margin:"10px"}}>
                         <Button variant="success" onClick={this.confirmOTP}>Confirm OTP</Button>
                     </div>
-
                     <h5 style={{color:"white"}} className="text-center">
                         Tap to continue to accept ada Reach Privacy Policy .
                     </h5>
