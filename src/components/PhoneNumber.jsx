@@ -39,11 +39,18 @@ export default class PhoneNumber extends Component {
         axios.post(PHONE_NUMBER,body,config)
             .then(res=>{
                 console.log(res.data.message)
-                this.props.history.push('/otp',{phone_number})
+                this.props.history.push({
+                    pathname: '/otp',
+                    phone_number:phone_number
+                })
             })
             .catch(err=>{
                 message.error(err.response.data.error);
             })
+    }
+    numberValidation = () => {
+        const {a,b,c,d,e,f,g,h,i,j} = this.state;
+        return a && b && c && d && e && f && g && h && i && j && true; 
     }
     render() {
         return (
@@ -65,7 +72,7 @@ export default class PhoneNumber extends Component {
                         <input maxLength="1" ref="j" className="col-md-auto digits" name="j" value={this.state.j} type="number" onChange={this.onChange}/>
                     </div>
                     <div className="text-center" style={{margin:"10px"}}>
-                        <Button variant="success" onClick={this.sendOTP}>Send OTP</Button>
+                        <Button disabled={!this.numberValidation()} variant="success" onClick={this.sendOTP}>Send OTP</Button>
                     </div>
 
                     <div className="container-fluid">
@@ -80,16 +87,11 @@ export default class PhoneNumber extends Component {
                     </div>
                 </div>
                 <ul className="bg-bubbles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {
+                        Array.from({ length: 10 }, (_, k) => (
+                            <li key={k}/>
+                        ))
+                    }
                 </ul>
             </div>
         )

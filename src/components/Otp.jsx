@@ -31,7 +31,7 @@ export default class Otp extends Component {
             "Content-Type": "application/json"
             }
         };
-        const body = JSON.stringify({ "phone_number":"8801933049097", "vendor":"1","otp":otp });
+        const body = JSON.stringify({ "phone_number":this.props.location.phone_number, "vendor":localStorage.getItem('plaappid'),"otp":otp });
         axios.post(OTP,body,config)
             .then(res=>{
                 localStorage.setItem("Token",res.data.Token)

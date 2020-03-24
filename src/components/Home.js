@@ -51,6 +51,7 @@ export default class Home extends Component {
     }
         
     render() {
+        console.log(this.state)
         const {step} = this.state;
         switch(step){
             case 1:
@@ -95,6 +96,9 @@ export default class Home extends Component {
                     })
                     .catch((err)=>{
                         message.error(err.response.data.error);
+                        localStorage.removeItem("pla");
+                        localStorage.removeItem("plaappid");
+                        this.setState({step:1})
                     })
                 return (
                     <div className="wrapper">

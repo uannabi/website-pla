@@ -3,6 +3,7 @@ import PhoneNumber from './components/PhoneNumber';
 import Otp from './components/Otp';
 import Success from './components/Success';
 import Home from './components/Home';
+import NotFound from './components/NotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
           <Route exact path="/phone" component={PhoneNumber}/>
           <Route exact path="/otp" component={Otp}/>
           <Route exact path="/success" component={Success}/>
+          <Route component={NotFound}/>
         </Switch>
       </Router>
     )
