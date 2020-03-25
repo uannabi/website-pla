@@ -12,8 +12,8 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/phone" component={PhoneNumber}/>
-          <Route exact path="/otp" component={Otp}/>
+          <Route exact path="/K7wnDfQ34tyenxNti3uDSXhSvyMjoV/phone" component={PhoneNumber}/>
+          <Route exact path="/ZHo9svXEp9kNAVK2gIUfvculO/otp" component={Otp}/>
           <Route exact path="/success" component={Success}/>
           <Route component={NotFound}/>
         </Switch>

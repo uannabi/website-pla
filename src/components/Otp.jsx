@@ -80,16 +80,11 @@ export default class Otp extends Component {
                 />
                 </div>
                 <ul className="bg-bubbles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {
+                        Array.from({ length: 10 }, (_, k) => (
+                            <li key={k}/>
+                        ))
+                    }
                 </ul>
             </div>
         )

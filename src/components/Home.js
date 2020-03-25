@@ -66,16 +66,11 @@ export default class Home extends Component {
                             </form>
                         </div>   
                         <ul className="bg-bubbles">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            {
+                                Array.from({ length: 10 }, (_, k) => (
+                                    <li key={k}/>
+                                ))
+                            }
                         </ul>
                     </div>
                 )
@@ -123,16 +118,11 @@ export default class Home extends Component {
                             </div>
                         </div>   
                         <ul className="bg-bubbles">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            {
+                                Array.from({ length: 10 }, (_, k) => (
+                                    <li key={k}/>
+                                ))
+                            }
                         </ul>
                         </div>
                 )
