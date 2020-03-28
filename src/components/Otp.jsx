@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Button} from "react-bootstrap";
 import {OTP} from './../endpoint';
 import axios from 'axios';
-import { Progress ,message,Input} from 'antd';
+import { Progress ,message} from 'antd';
 
 export default class Otp extends Component {
         style = {

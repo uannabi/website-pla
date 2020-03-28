@@ -5,11 +5,15 @@ import Success from './components/Success';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+var hist = createBrowserHistory();
+
 
 class App extends React.Component {
   render(){
     return(
-      <Router>
+      <Router history={hist}>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/K7wnDfQ34tyenxNti3uDSXhSvyMjoV/phone" component={PhoneNumber}/>
