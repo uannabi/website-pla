@@ -40,7 +40,7 @@ export default class PhoneNumber extends Component {
             .then(res=>{
                 console.log(res.data.message)
                 this.props.history.push({
-                    pathname: '/otp',
+                    pathname: '/ZHo9svXEp9kNAVK2gIUfvculO/otp',
                     phone_number:phone_number
                 })
             })
