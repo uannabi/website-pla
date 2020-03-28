@@ -2,6 +2,7 @@
   "name": "pla",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/index.js",
   "dependencies": {
     "@ant-design/icons": "4.0.0",
     "@testing-library/jest-dom": "^4.2.4",
